@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de administración — Inventario en Línea</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ Cabecera ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">📦</span>
+        <span>Inventario&nbsp;Online</span>
+      </a>
+      <nav class="header-actions">
+        <div class="user-chip" id="user-chip" hidden>
+          👤 <span id="user-email"></span>
+        </div>
+        <a class="btn btn-ghost btn-sm" href="index.html">Inicio</a>
+        <button class="btn btn-danger btn-sm" id="btn-logout" type="button">Cerrar sesión</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="panel-layout">
+
+      <!-- ============ Columna izquierda: formulario ============ -->
+      <section class="panel-card">
+        <h2><span class="dot"></span> <span id="form-title">Añadir producto</span></h2>
+
+        <div class="editing-banner" id="editing-banner">
+          <span>✏️ Editando: <strong id="editing-name"></strong></span>
+          <button class="btn btn-ghost btn-sm" id="btn-cancel-edit" type="button">Cancelar</button>
+        </div>
+
+        <form id="product-form" novalidate>
+          <div class="form-group">
+            <label for="nombre">Nombre del producto</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej. Tornillo M8" maxlength="120" required />
+          </div>
+
+          <div class="form-group">
+            <label for="cantidad">Cantidad</label>
+            <input type="number" id="cantidad" name="cantidad" placeholder="Ej. 25" min="0" step="1" required />
+          </div>
+
+          <button type="submit" class="btn btn-success btn-block" id="btn-save">➕ Añadir producto</button>
+        </form>
+      </section>
+
+      <!-- ============ Columna derecha: tabla de productos ============ -->
+      <section class="panel-card">
+        <h2><span class="dot"></span> Productos disponibles</h2>
+
+        <div id="panel-alert" class="alert" hidden></div>
+
+        <div class="search-box">
+          <input type="search" id="search" placeholder="🔍 Buscar por nombre…" />
+        </div>
+
+        <div id="panel-loading" class="state-box" hidden>
+          <div class="spinner"></div>
+          Cargando productos…
+        </div>
+
+        <div id="panel-empty" class="state-box" hidden>
+          <div class="state-icon">📭</div>
+          <strong>No hay productos.</strong>
+          <p>Añade el primero con el formulario.</p>
+        </div>
+
+        <div class="table-wrap" id="table-wrap">
+          <table class="products">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th style="text-align:right;">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="products-tbody"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ Pie de página ============ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2026 Inventario Online — Panel de administración.</span>
+      <span>Firestore · colección <code>productos</code></span>
+    </div>
+  </footer>
+
+  <!-- ============ Firebase (compat) ============ -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/panel.js"></script>
+</body>
+</html>

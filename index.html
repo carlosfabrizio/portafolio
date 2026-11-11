@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventario en Línea — Clasificación de stock</title>
+  <meta name="description" content="Servicio dedicado a la clasificación en línea de inventarios y stock." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ Cabecera ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">📦</span>
+        <span>Inventario&nbsp;Online</span>
+      </a>
+      <nav class="header-actions">
+        <a class="btn btn-outline btn-sm" id="btn-header-login" href="login.html">Iniciar sesión</a>
+        <div class="user-chip" id="user-chip" hidden>
+          👤 <span id="user-email"></span>
+        </div>
+        <a class="btn btn-primary btn-sm" id="btn-header-panel" href="panel.html" hidden>🛠️ Gestionar stock</a>
+        <a class="btn btn-primary btn-sm" href="stock.html">Ver stock</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ============ Hero / información de relleno ============ -->
+    <section class="hero">
+      <span class="hero-badge">Gestión de inventarios</span>
+      <h1>Clasificación en línea de <span class="highlight">inventarios y stock</span></h1>
+      <p class="lead">
+        Somos un servicio dedicado a la clasificación en línea de inventarios. Centraliza tus
+        productos, consulta el stock disponible en tiempo real y mantén tu catálogo siempre
+        organizado, desde cualquier dispositivo y sin instalar nada.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="stock.html">📋 Ver stock disponible</a>
+        <a class="btn btn-outline" href="login.html">🔐 Iniciar sesión</a>
+      </div>
+    </section>
+
+    <!-- ============ Características (relleno) ============ -->
+    <section class="features">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🗂️</div>
+          <h3>Clasificación centralizada</h3>
+          <p>
+            Todos tus productos en un solo lugar. Cada ítem se registra con su nombre y su
+            cantidad, listos para consultarse al instante.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Stock en tiempo real</h3>
+          <p>
+            Consulta los ítems disponibles directamente desde la base de datos en la nube.
+            Lo que ves es lo que hay, siempre actualizado.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Acceso seguro</h3>
+          <p>
+            Solo los usuarios autenticados pueden añadir, editar o borrar productos.
+            La consulta pública del stock permanece abierta para todos.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Desde cualquier dispositivo</h3>
+          <p>
+            Interfaz ligera y responsive: funciona igual de bien en el escritorio,
+            la tablet o el teléfono.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ Pie de página ============ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2026 Inventario Online — Clasificación en línea de inventarios.</span>
+      <span>Construido con HTML, CSS, JavaScript y Firebase Firestore.</span>
+    </div>
+  </footer>
+
+  <!-- ============ Firebase (compat) ============ -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/header-auth.js"></script>
+
+</body>
+</html>
